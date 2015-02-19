@@ -1,8 +1,8 @@
 (function(){
     
- Dropdown = function(pNavigation, pItems){
+ Dropdown = function(pNavigation){
     this.navigation = pNavigation;
-    this.items = pItems;
+    this.items = this.navigation[0].children;
  };
     
  Dropdown.prototype = {
@@ -37,14 +37,30 @@
     },
   
  }
+ 
+ 
+ /*Accordeon = function(pNavigation){
+    this.navigation = pNavigation;
+    this.items = = this.navigation[0].children;
+ };
+    
+
+Accordeon.prototype = {
+    constructor : Accordeon,
+    
+    addEventHandler
+    
+}*/
      
 
 })();
 
 function init(){
     var nav = document.getElementsByClassName("dropdown");
-    var navItems = document.getElementsByTagName("li");
-    var dropdown = new Dropdown(nav, navItems);
+    var navAccordeon = document.getElementsByClassName("accordeon");
+    var accordeon = new Dropdown(navAccordeon);
+    var dropdown = new Dropdown(nav);
     dropdown.addEventHandler();
+    accordeon.addEventHandler();
 }
 window.onload = init;
