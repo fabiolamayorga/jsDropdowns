@@ -9,8 +9,8 @@ ul{
     display: inline;
 }
 
-.dropdown li ul{
-    display: none;
+.dropdown li .hiddenMenu{
+    display: none
 }
 
 
