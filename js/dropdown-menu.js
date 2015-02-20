@@ -38,19 +38,41 @@
   
  }
  
- 
- /*Accordeon = function(pNavigation){
-    this.navigation = pNavigation;
-    this.items = = this.navigation[0].children;
- };
+Hamburguer = function(pTrigger, pMenu){
+    this.trigger = pTrigger;
+    this.menu = pMenu;
+    console.log(this.trigger);
+};
     
+Hamburguer.prototype = {
+    constructor: Hamburguer,
+    
+    addEventHandler: function(){
+        this.trigger.ref = this;
+        this.menu.ref = this;
+        this.trigger.addEventListener("mouseover", this.showHidden, false);
+        this.trigger.addEventListener("mouseout", this.hide, false);
+    },
+    
+    showHidden : function(e){
+        this.ref.showHiddenMenu();
+    },
+    
+    
+    hide: function(e){
+         this.ref.hideMenu();
+    },
+    
+    showHiddenMenu : function(){
+        this.menu.classList.toggle("hiddenMenu");
+    },
+    
+    
+    hideMenu : function(){
+        this.menu.classList.toggle("hiddenMenu");
 
-Accordeon.prototype = {
-    constructor : Accordeon,
-    
-    addEventHandler
-    
-}*/
+    }
+}
      
 
 })();
@@ -58,9 +80,13 @@ Accordeon.prototype = {
 function init(){
     var nav = document.getElementsByClassName("dropdown");
     var navAccordeon = document.getElementsByClassName("accordeon");
+    var ham = document.getElementById("trigger");
+    var hamMenu = document.getElementById("hamburguer");
     var accordeon = new Dropdown(navAccordeon);
     var dropdown = new Dropdown(nav);
+    var hamburguer = new Hamburguer(ham,hamMenu);
     dropdown.addEventHandler();
     accordeon.addEventHandler();
+    hamburguer.addEventHandler();
 }
 window.onload = init;

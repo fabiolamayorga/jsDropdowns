@@ -5,12 +5,14 @@ body{
 a{
     text-decoration: none;
     color: #fff;
+    display: block;
 }
 
 ul{
     list-style: none;
     display: block;
     padding: 0;
+    margin: 0;
 }
 
 /*-------Dropdown --------*/
@@ -90,6 +92,29 @@ ul{
 }
 
 
+/*-------Hamburguer --------*/
+img{
+width: 100%;
+}
 
+.hamburguerMenu a{
+ width: 10%;
+}
 
+#hamburguer{
+    width: 20%;
+}
+
+#hamburguer.hiddenMenu{
+    display: none;
+}
+
+#hamburguer.showMenu{
+    display: block;
+}
+
+#hamburguer li{
+    background: #000;
+
+}
 
